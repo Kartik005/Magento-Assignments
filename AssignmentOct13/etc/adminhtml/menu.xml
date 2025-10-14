@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Assignment_AssignmentOct13::orders"
+            title="Kartik Custom Sales Orders"
+            module="Assignment_AssignmentOct13"
+            sortOrder="25"
+            parent="Magento_Sales::sales"
+            action="oct13/orders/index"
+            resource="Assignment_AssignmentOct13::orders"/>
+    </menu>
+</config>

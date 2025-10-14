@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- 
+    This section registers our data source handle.
+    It tells Magento's CollectionFactory: "When you see a request for 'assignmentoct13_orders_listing_data_source',
+    you should provide an instance of the class defined in the item node."
+    -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="assignmentoct13_orders_listing_data_source" xsi:type="string">Assignment\AssignmentOct13\Model\ResourceModel\Order\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--
+    This is a "virtual type". We are creating a new virtual class definition without needing a new PHP file.
+    We're telling Magento: "Create a definition for 'Assignment\AssignmentOct13\Model\ResourceModel\Order\Grid\Collection'.
+    It should be a copy of the standard Magento sales order grid collection, but make sure its main table
+    is 'sales_order_grid'." This ensures our grid uses the correct, optimized database table for sales grids.
+    -->
+    <virtualType name="Assignment\AssignmentOct13\Model\ResourceModel\Order\Grid\Collection" type="Magento\Sales\Model\ResourceModel\Order\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Sales\Model\ResourceModel\Order</argument>
+        </arguments>
+    </virtualType>
+
+</config>

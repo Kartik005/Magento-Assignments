@@ -19,6 +19,7 @@
     </argument>
 
     <!-- 2. Data Source: Connects the grid to the data collection -->
+    <!-- this gets injected from di.xml, and di gives them the "sales_order_grid DB collection " -->
     <dataSource name="assignmentoct13_orders_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>

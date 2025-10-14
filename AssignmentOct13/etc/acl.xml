@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Sales::sales" title="Sales" sortOrder="20">
+                    <!-- the id here is what we use in other files  -->
+                    <resource id="Assignment_AssignmentOct13::orders" title="Kartik Custom Sales Orders" sortOrder="25" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
+
